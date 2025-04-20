@@ -32,8 +32,30 @@ module.exports = {
         useEmoji: false,
         emojiAlign: 'center',
         useAI: true,
-        aiModel: 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B',
-        aiNumber: 3, // 生成 6 条信息提供给我们选择
+        aiModel: 'deepseek-chat',
+        aiNumber: 1,
+        aiClient: async (diff, config) => {
+            const response = await fetch("https://api.deepseek.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer sk-98efb336bb944f8e98fd6f81cc4aa869`
+                },
+                body: JSON.stringify({
+                    model: config.aiModel,
+                    messages: [
+                        {
+                            role: "user",
+                            content: `根据以下代码，生成一个commit message：
+                            ${diff}
+                            `
+                        }
+                    ]
+                })
+            });
+            const data = await response.json();
+            return data.choices[0].message.content;
+        },
         themeColorCode: '',
         scopes: [],
         allowCustomScopes: true,

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cz": "cross-env NODE_OPTIONS='--experimental-transform-types --disable-warning ExperimentalWarning' czg"
   },
   "dependencies": {
     "vue": "^3.5.13"
@@ -15,7 +16,9 @@
     "@vitejs/plugin-vue": "^5.2.2",
     "@vue/tsconfig": "^0.7.0",
     "commitizen": "^4.3.1",
+    "cross-env": "^7.0.3",
     "cz-git": "^1.11.1",
+    "czg": "^1.11.1",
     "typescript": "~5.7.2",
     "vite": "^6.3.1",
     "vue-tsc": "^2.2.8"
