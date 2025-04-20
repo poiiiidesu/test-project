@@ -15,6 +15,10 @@ const count = ref(0)
       Edit
       <code>components/HelloWorld.vue</code> to test
     </p>
+    <p>
+      Edit
+      <code>components/HelloWorld.vue</code> to test
+    </p>
   </div>
 
   <p>

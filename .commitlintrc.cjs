@@ -31,8 +31,9 @@ module.exports = {
         ],
         useEmoji: false,
         emojiAlign: 'center',
-        useAI: false,
-        aiNumber: 1,
+        useAI: true,
+        aiModel: 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B',
+        aiNumber: 3, // 生成 6 条信息提供给我们选择
         themeColorCode: '',
         scopes: [],
         allowCustomScopes: true,
